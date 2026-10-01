@@ -156,6 +156,11 @@
   .status-tag.pending { background: var(--pending-soft); color: var(--pending); }
   .status-tag.confirmed { background: var(--confirmed-soft); color: var(--confirmed); }
 
+  .palette-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 6px; }
+  .swatch { display: flex; flex-direction: column; align-items: center; gap: 8px; width: 84px; }
+  .swatch-color { width: 64px; height: 64px; border-radius: 10px; border: 1px solid var(--border); box-shadow: var(--shadow); }
+  .swatch-label { font-family: "IBM Plex Mono", monospace; font-size: 11px; color: var(--text-dim); text-align: center; line-height: 1.3; }
+
   .link-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
   .link-btn {
     display: inline-flex; align-items: center; gap: 7px;
@@ -257,30 +262,32 @@
     </div>
 
     <div class="block">
-      <p class="field-label">Linguagem visual, elementos, cores, comunicação de cada marca, logo das marcas</p>
-      <p class="field-value">A definir junto com o conceito macro.</p>
+      <p class="block-title">🎨 Linguagem visual, elementos, cores, comunicação de cada marca
+        <span class="status-tag confirmed">Espelhando Ogro e Øliver's dos links anteriores do iFood</span>
+      </p>
+
+      <p class="field-label" style="margin-top: 4px;">Øliver's</p>
+      <p class="field-value" style="margin-bottom: 10px;">Preto, branco, off-white e tons neutros. As referências visuais dos cases genéricos do iFood usam vermelho só pra ilustrar formato/composição, não é direção de cor pra aplicar na peça.</p>
+      <div class="palette-row" style="margin-bottom: 18px;">
+        <div class="swatch"><div class="swatch-color" style="background: #1a1a1a;"></div><span class="swatch-label">Preto</span></div>
+        <div class="swatch"><div class="swatch-color" style="background: #ffffff; border: 1px solid var(--border);"></div><span class="swatch-label">Branco</span></div>
+        <div class="swatch"><div class="swatch-color" style="background: #f3ede1;"></div><span class="swatch-label">Off-white</span></div>
+        <div class="swatch"><div class="swatch-color" style="background: #c7beac;"></div><span class="swatch-label">Tons neutros</span></div>
+      </div>
+
+      <p class="field-label">Ogro Steaks</p>
+      <p class="field-value">Comunicação exagerada e apetitosa, com o Jimmy Ogro como protagonista (abre e fecha mordendo o burger). Produto em closes de carne, queijo derretido e montagem do lanche. Tom de voz grande, direto, com energia.</p>
+
+      <p class="field-label" style="margin-top: 14px;">Temakeria Universitária</p>
+      <p class="field-value">Sem link anterior do iFood pra espelhar, essa marca entra pela primeira vez nesse formato. Seguir identidade visual padrão da marca (ver pasta de ID visual, link abaixo) até a Estratégia fechar direcionamento específico.</p>
     </div>
   </section>
 
   <section class="part">
     <div class="part-head">
-      <span class="part-title olv">Nosso direcionamento, Øliver's</span>
-      <span class="status-tag pending">A definir</span>
+      <span class="part-title olv">Entregas e links, Øliver's</span>
     </div>
-    <p class="part-note">Conceito e produto promocional vão depender da oferta e da estratégia que Mathias e Aline definirem.</p>
-
     <div class="block">
-      <p class="field-label">Conceito</p>
-      <p class="field-value">A definir.</p>
-    </div>
-
-    <div class="block">
-      <p class="field-label">Produto promocional</p>
-      <p class="field-value">A definir.</p>
-    </div>
-
-    <div class="block">
-      <p class="field-label" style="margin-bottom: 10px;">Entregas e links</p>
       <div class="link-row">
         <a class="link-btn olv" href="https://drive.google.com/drive/folders/12RKDmI7xgkE0CJ5YmLVWCaM_3Tn30TlY?usp=drive_link" target="_blank" rel="noopener">📁 Fotos do produto</a>
         <a class="link-btn olv" href="https://drive.google.com/drive/folders/1VxGOJ_1MSTKGZpBdEL02vrNHS8GxNyk6?usp=drive_link" target="_blank" rel="noopener">🎨 ID visual</a>
@@ -290,52 +297,24 @@
 
   <section class="part">
     <div class="part-head">
-      <span class="part-title ogro">Nosso direcionamento, Ogro Steaks</span>
-      <span class="status-tag pending">A definir</span>
+      <span class="part-title tmk">Entregas e links, Temakeria Universitária</span>
     </div>
-    <p class="part-note">Conceito e produto promocional vão depender da oferta e da estratégia que Mathias e Aline definirem.</p>
-
     <div class="block">
-      <p class="field-label">Conceito</p>
-      <p class="field-value">A definir.</p>
-    </div>
-
-    <div class="block">
-      <p class="field-label">Produto promocional</p>
-      <p class="field-value">A definir.</p>
-    </div>
-
-    <div class="block">
-      <p class="field-label" style="margin-bottom: 10px;">Entregas e links</p>
       <div class="link-row">
-        <a class="link-btn ogro" href="https://drive.google.com/drive/folders/16tKnCxR7aQWhwdEWOwMb5o3-swsuQeLv?usp=drive_link" target="_blank" rel="noopener">📁 Fotos do produto</a>
-        <a class="link-btn ogro" href="https://drive.google.com/drive/folders/1SSZuc2AXNS6H_Y6eSRDnInKtPO4EC0_Q?usp=drive_link" target="_blank" rel="noopener">🎨 ID visual</a>
+        <a class="link-btn tmk" href="https://drive.google.com/drive/folders/1G421w744V_9FdNSxB__BzQy5brH4tsPN?usp=drive_link" target="_blank" rel="noopener">📁 Fotos do produto</a>
+        <a class="link-btn tmk" href="https://drive.google.com/drive/folders/1SXECLqmTkQnMI920L6Nfw3-FZ49mF4cN?usp=drive_link" target="_blank" rel="noopener">🎨 ID visual</a>
       </div>
     </div>
   </section>
 
   <section class="part">
     <div class="part-head">
-      <span class="part-title tmk">Nosso direcionamento, Temakeria Universitária</span>
-      <span class="status-tag pending">A definir</span>
+      <span class="part-title ogro">Entregas e links, Ogro Steaks</span>
     </div>
-    <p class="part-note">Conceito e produto promocional vão depender da oferta e da estratégia que Mathias e Aline definirem.</p>
-
     <div class="block">
-      <p class="field-label">Conceito</p>
-      <p class="field-value">A definir.</p>
-    </div>
-
-    <div class="block">
-      <p class="field-label">Produto promocional</p>
-      <p class="field-value">A definir.</p>
-    </div>
-
-    <div class="block">
-      <p class="field-label" style="margin-bottom: 10px;">Entregas e links</p>
       <div class="link-row">
-        <a class="link-btn tmk" href="https://drive.google.com/drive/folders/1G421w744V_9FdNSxB__BzQy5brH4tsPN?usp=drive_link" target="_blank" rel="noopener">📁 Fotos do produto</a>
-        <a class="link-btn tmk" href="https://drive.google.com/drive/folders/1SXECLqmTkQnMI920L6Nfw3-FZ49mF4cN?usp=drive_link" target="_blank" rel="noopener">🎨 ID visual</a>
+        <a class="link-btn ogro" href="https://drive.google.com/drive/folders/16tKnCxR7aQWhwdEWOwMb5o3-swsuQeLv?usp=drive_link" target="_blank" rel="noopener">📁 Fotos do produto</a>
+        <a class="link-btn ogro" href="https://drive.google.com/drive/folders/1SSZuc2AXNS6H_Y6eSRDnInKtPO4EC0_Q?usp=drive_link" target="_blank" rel="noopener">🎨 ID visual</a>
       </div>
     </div>
   </section>
