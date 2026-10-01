@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<title>Proposta iFood + Direcionamento, Grupo ROB Food</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #faf6f0;
+    --surface: #ffffff;
+    --surface-2: #f3ebe0;
+    --border: #e4d8c8;
+    --text: #2a221a;
+    --text-dim: #6b5c4c;
+    --olv: #c8402a;
+    --olv-soft: #fbe9e4;
+    --ogro: #5a3a24;
+    --ogro-soft: #efe4d6;
+    --tmk: #8a2e3a;
+    --tmk-soft: #f6e4e6;
+    --ifood-red: #ea1d2c;
+    --ifood-soft: #fde8e9;
+    --pending: #a3721f;
+    --pending-soft: #faf0dc;
+    --confirmed: #3f7a52;
+    --confirmed-soft: #e8f3ea;
+    --shadow: 0 1px 2px rgba(42,34,26,0.06), 0 8px 24px -12px rgba(42,34,26,0.18);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Work Sans", -apple-system, "Segoe UI", sans-serif;
+    line-height: 1.55;
+  }
+  .page { max-width: 900px; margin: 0 auto; padding: 56px 24px 96px; }
+
+  header.doc-head { margin-bottom: 48px; }
+  .eyebrow {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12.5px;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin: 0 0 10px;
+  }
+  h1 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: clamp(28px, 4.6vw, 40px);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+    margin: 0 0 14px;
+  }
+  .doc-sub { font-size: 16px; color: var(--text-dim); max-width: 62ch; margin: 0 0 20px; }
+  .meta-row { display: flex; flex-wrap: wrap; gap: 10px; }
+  .meta-chip {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12.5px;
+    padding: 5px 11px;
+    border-radius: 999px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+  }
+
+  section.part { margin-top: 56px; padding-top: 40px; border-top: 1px solid var(--border); }
+  .part-head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 8px; }
+  .part-title { font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: 26px; }
+  .part-title.ifood { color: var(--ifood-red); }
+  .part-title.olv { color: var(--olv); }
+  .part-title.ogro { color: var(--ogro); }
+  .part-title.tmk { color: var(--tmk); }
+  .part-note { font-size: 14.5px; color: var(--text-dim); margin: 4px 0 28px; max-width: 66ch; }
+  .brand-dates {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 13px;
+    color: var(--text-dim);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .impact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-top: 8px; }
+  .impact-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    padding: 20px 20px;
+  }
+  .impact-cat { font-size: 12px; color: var(--text-dim); margin: 0 0 4px; }
+  .impact-name { font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: 19px; margin: 0 0 16px; }
+  .impact-label { font-size: 11.5px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ifood-red); margin: 0 0 3px; font-weight: 500; }
+  .impact-value { font-size: 18px; font-weight: 600; margin: 0; }
+  .impact-value.tbd { color: var(--pending); }
+  .bonus-tag {
+    display: inline-block;
+    margin-top: 10px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 999px;
+    background: var(--confirmed-soft);
+    color: var(--confirmed);
+  }
+  .channels-row { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 18px; font-size: 14px; color: var(--text-dim); }
+  .channels-row strong { color: var(--text); }
+
+  .block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    padding: 24px 26px;
+    margin-bottom: 18px;
+  }
+  .block-title {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin: 0 0 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .field-label { font-size: 13px; color: var(--text-dim); margin: 0 0 3px; }
+  .field-value { font-size: 15px; margin: 0; }
+  .mote-value { font-family: "Fraunces", Georgia, serif; font-weight: 500; font-size: 18px; margin: 0; }
+  .option-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+  .option-list li {
+    display: flex; gap: 10px; align-items: baseline;
+    padding: 10px 13px; background: var(--surface-2); border-radius: 8px; border: 1px solid var(--border);
+    font-size: 14.5px;
+  }
+  .opt-num { font-family: "IBM Plex Mono", monospace; font-size: 11px; color: var(--text-dim); flex-shrink: 0; }
+
+  .status-tag {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .status-tag.pending { background: var(--pending-soft); color: var(--pending); }
+  .status-tag.confirmed { background: var(--confirmed-soft); color: var(--confirmed); }
+
+  .link-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+  .link-btn {
+    display: inline-flex; align-items: center; gap: 7px;
+    font-family: "IBM Plex Mono", monospace; font-size: 13px; font-weight: 500;
+    color: #fff; text-decoration: none; padding: 10px 15px;
+    border-radius: 9px;
+  }
+  .link-btn.olv { background: var(--olv); }
+  .link-btn.ogro { background: var(--ogro); }
+  .link-btn.tmk { background: var(--tmk); }
+
+  footer.doc-foot {
+    margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--border);
+    font-family: "IBM Plex Mono", monospace; font-size: 12.5px; color: var(--text-dim);
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+  }
+
+  @media (max-width: 560px) { .page { padding: 40px 16px 72px; } .block, .impact-card { padding: 18px; } }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <header class="doc-head">
+    <p class="eyebrow">Grupo ROB · Øliver's + Ogro Steaks + Temakeria Universitária · iFood Ads</p>
+    <h1>iFood Outubro<br />Grupo ROB Food</h1>
+    <p class="doc-sub">Contexto, entregas, conceito, banner, vídeo e push das três marcas juntas.</p>
+    <div class="meta-row">
+      <span class="meta-chip">Outubro 2026</span>
+      <span class="meta-chip">08–16/10, 1 semana</span>
+      <span class="meta-chip">3 marcas num só vídeo</span>
+    </div>
+  </header>
+
+  <section class="part">
+    <div class="part-head">
+      <span class="part-title ifood">Sobre esta campanha</span>
+    </div>
+    <p class="part-note" style="margin-bottom: 20px;">A campanha anterior do iFood teve entrega bem abaixo do contratado: previsão de cerca de 2 milhões de visualizações, entregues 130 a 180 mil. O principal problema foi o formato anterior, que concentrava uma única marca no vídeo, dificultando a distribuição e a performance pelo algoritmo. A sugestão foi replicar a ação do Grupo Rão, que engloba as marcas do grupo num só vídeo. Detalhe completo em <a href="https://github.com/dev-seven7/cs-rob-food/issues/118" style="color: var(--text);">cs-rob-food#118</a>.</p>
+
+    <div class="block">
+      <p class="field-label">Nova estratégia</p>
+      <p class="field-value">Trabalhar as 3 marcas juntas num vídeo só, ampliando variedade de culinárias e potencial de entrega dentro do iFood: <strong>Øliver's Pizza + Temakeria Universitária + Ogro Steaks</strong>.</p>
+    </div>
+  </section>
+
+  <section class="part">
+    <div class="part-head">
+      <span class="part-title ifood">Peças: Banner Home + Vídeo Ads + Push</span>
+    </div>
+    <p class="part-note">Mesmas peças da campanha anterior (banner e vídeo ads), com duas mudanças: o vídeo ads passa a reunir as três marcas, e o período de impacto sai de 3 dias pra 1 semana, de 08 a 16/10, aproveitando também o feriado de Dia das Crianças.</p>
+    <div class="impact-grid">
+      <div class="impact-card">
+        <p class="impact-cat">Categoria</p>
+        <p class="impact-name">Banner Home</p>
+        <p class="impact-label">Impacto</p>
+        <p class="impact-value">08 a 16/10 (1 semana)</p>
+      </div>
+      <div class="impact-card">
+        <p class="impact-cat">Categoria</p>
+        <p class="impact-name">Vídeo Ads (3 marcas)</p>
+        <p class="impact-label">Impacto</p>
+        <p class="impact-value tbd">?</p>
+        <span class="status-tag pending">A confirmar com o iFood</span>
+      </div>
+      <div class="impact-card">
+        <p class="impact-cat">Categoria</p>
+        <p class="impact-name">Push</p>
+        <p class="impact-label">Impacto</p>
+        <p class="impact-value tbd">?</p>
+        <span class="status-tag pending">A confirmar com o iFood</span>
+      </div>
+    </div>
+    <div class="channels-row">
+      <span><strong>In App</strong> · Home + Aba Restaurantes</span>
+      <span><strong>Out App</strong> · Notificações</span>
+    </div>
+  </section>
+
+  <section class="part">
+    <div class="part-head">
+      <span class="part-title ifood">Brainstorm + direcionamento da campanha</span>
+      <span class="status-tag pending">A definir</span>
+    </div>
+    <p class="part-note">Conceito macro, narrativa central e promocional, linguagem visual e direcionamento geral das marcas (elementos, cores, comunicação de cada marca, logo das marcas). Mathias e Aline estão fechando a estratégia, com envio previsto ainda hoje (01/10). Assim que chegar, cruzamos com o que já está esboçado abaixo e fechamos este bloco.</p>
+
+    <div class="block">
+      <p class="field-label">Conceito macro</p>
+      <p class="field-value">A definir com Mathias e Aline. Estruturar no mesmo modelo do briefing anterior, porém agora pensando nas três marcas dentro de uma única narrativa.</p>
+    </div>
+
+    <div class="block">
+      <p class="block-title">💡 Linhas de narrativa, esboço inicial</p>
+      <ul class="option-list">
+        <li><span class="opt-num">01</span>3 marcas. 3 vontades completamente diferentes. Um só lugar pra pedir.</li>
+        <li><span class="opt-num">02</span>Hoje você tá com vontade de quê? Pizza? Japonês? Burger/Steak? Não importa a resposta. Tem no iFood.</li>
+      </ul>
+      <p class="field-value" style="margin-top: 14px;">Estrutura possível pro vídeo: cortes rápidos alternando desejo, produto e marca, fazendo as três coexistirem.</p>
+    </div>
+
+    <div class="block">
+      <p class="field-label">Linguagem visual, elementos, cores, comunicação de cada marca, logo das marcas</p>
+      <p class="field-value">A definir junto com o conceito macro.</p>
+    </div>
+  </section>
+
+  <section class="part">
+    <div class="part-head">
+      <span class="part-title olv">Nosso direcionamento, Øliver's</span>
+      <span class="status-tag pending">A definir</span>
+    </div>
+    <p class="part-note">Conceito e produto promocional vão depender da oferta e da estratégia que Mathias e Aline definirem.</p>
+
+    <div class="block">
+      <p class="field-label">Conceito</p>
+      <p class="field-value">A definir.</p>
+    </div>
+
+    <div class="block">
+      <p class="field-label">Produto promocional</p>
+      <p class="field-value">A definir.</p>
+    </div>
+
+    <div class="block">
+      <p class="field-label" style="margin-bottom: 10px;">Entregas e links</p>
+      <div class="link-row">
+        <a class="link-btn olv" href="https://drive.google.com/drive/folders/12RKDmI7xgkE0CJ5YmLVWCaM_3Tn30TlY?usp=drive_link" target="_blank" rel="noopener">📁 Fotos do produto</a>
+        <a class="link-btn olv" href="https://drive.google.com/drive/folders/1VxGOJ_1MSTKGZpBdEL02vrNHS8GxNyk6?usp=drive_link" target="_blank" rel="noopener">🎨 ID visual</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="part">
+    <div class="part-head">
+      <span class="part-title ogro">Nosso direcionamento, Ogro Steaks</span>
+      <span class="status-tag pending">A definir</span>
+    </div>
+    <p class="part-note">Conceito e produto promocional vão depender da oferta e da estratégia que Mathias e Aline definirem.</p>
+
+    <div class="block">
+      <p class="field-label">Conceito</p>
+      <p class="field-value">A definir.</p>
+    </div>
+
+    <div class="block">
+      <p class="field-label">Produto promocional</p>
+      <p class="field-value">A definir.</p>
+    </div>
+
+    <div class="block">
+      <p class="field-label" style="margin-bottom: 10px;">Entregas e links</p>
+      <div class="link-row">
+        <a class="link-btn ogro" href="https://drive.google.com/drive/folders/16tKnCxR7aQWhwdEWOwMb5o3-swsuQeLv?usp=drive_link" target="_blank" rel="noopener">📁 Fotos do produto</a>
+        <a class="link-btn ogro" href="https://drive.google.com/drive/folders/1SSZuc2AXNS6H_Y6eSRDnInKtPO4EC0_Q?usp=drive_link" target="_blank" rel="noopener">🎨 ID visual</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="part">
+    <div class="part-head">
+      <span class="part-title tmk">Nosso direcionamento, Temakeria Universitária</span>
+      <span class="status-tag pending">A definir</span>
+    </div>
+    <p class="part-note">Conceito e produto promocional vão depender da oferta e da estratégia que Mathias e Aline definirem.</p>
+
+    <div class="block">
+      <p class="field-label">Conceito</p>
+      <p class="field-value">A definir.</p>
+    </div>
+
+    <div class="block">
+      <p class="field-label">Produto promocional</p>
+      <p class="field-value">A definir.</p>
+    </div>
+
+    <div class="block">
+      <p class="field-label" style="margin-bottom: 10px;">Entregas e links</p>
+      <div class="link-row">
+        <a class="link-btn tmk" href="https://drive.google.com/drive/folders/1G421w744V_9FdNSxB__BzQy5brH4tsPN?usp=drive_link" target="_blank" rel="noopener">📁 Fotos do produto</a>
+        <a class="link-btn tmk" href="https://drive.google.com/drive/folders/1SXECLqmTkQnMI920L6Nfw3-FZ49mF4cN?usp=drive_link" target="_blank" rel="noopener">🎨 ID visual</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="doc-foot">
+    <span>Proposta iFood + Direcionamento, Grupo ROB Food</span>
+    <span>01/10/2026</span>
+  </footer>
+</div>
+
+</body>
+</html>
