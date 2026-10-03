@@ -184,6 +184,12 @@
   .promo-por { font-family: "Fraunces", Georgia, serif; font-weight: 700; font-size: 19px; }
   .promo-off { font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--ok); font-weight: 600; }
 
+  .shot-row { display: grid; grid-template-columns: 1fr; gap: 14px; }
+  @media (min-width: 640px) { .shot-row { grid-template-columns: 1fr 1fr; } }
+  .shot { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; box-shadow: var(--shadow); overflow: hidden; }
+  .shot img { width: 100%; display: block; }
+  .shot .cap { font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--text-dim); padding: 9px 13px; border-top: 1px solid var(--border); background: var(--surface-2); }
+
   footer.doc-foot {
     margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--border);
     font-family: "IBM Plex Mono", monospace; font-size: 12.5px; color: var(--text-dim);
@@ -266,6 +272,17 @@
       <p class="block-title">🎨 Linguagem visual, elementos, cores, comunicação de cada marca
         <span class="status-tag confirmed">Definido</span>
       </p>
+
+      <p class="field-value" style="margin: 0 0 18px;">Pra gente, é muito importante que a linguagem visual seja respeitada de acordo com cada marca. A gente espera que a comunicação visual seja respeitada dessa maneira, cada marca com sua própria identidade dentro da peça conjunta.</p>
+
+      <p class="field-label" style="margin-bottom: 10px;">Referências visuais, montagem do banner</p>
+      <div class="shot-row" style="margin-bottom: 22px;">
+        <div class="shot"><img src="ref1.png" alt="Referência 1, ordem Øliver's, Temakeria, Ogro" /><div class="cap">Referência 1, Øliver's + Temakeria + Ogro</div></div>
+        <div class="shot"><img src="ref2.png" alt="Referência 2, ordem Øliver's, Ogro, Temakeria" /><div class="cap">Referência 2, Øliver's + Ogro + Temakeria</div></div>
+      </div>
+      <div class="shot-row" style="margin-bottom: 22px;">
+        <div class="shot"><img src="ref3.png" alt="Referência 3, ordem Øliver's, Temakeria, Ogro" /><div class="cap">Referência 3, Øliver's + Temakeria + Ogro</div></div>
+      </div>
 
       <p class="field-label" style="margin-top: 4px;">Øliver's, cores</p>
       <div class="palette-row" style="margin-bottom: 14px;">
